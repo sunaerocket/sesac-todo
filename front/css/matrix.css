@@ -1,0 +1,150 @@
+ul,
+ol {
+  list-style-type: none;
+}
+
+.matrix-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border-left: 3px solid var(--dark-gray);
+  border-bottom: 3px solid var(--dark-gray);
+  margin: 1rem 4rem 4rem;
+
+  position: relative;
+}
+
+.matrix-item {
+  width: 45%;
+  height: 30rem;
+  border: 0.5px solid var(--dark-gray);
+  border-radius: 5px 5px 0 0;
+  margin: 2rem 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.matrix-item-header {
+  text-align: center;
+  background-color: var(--light-gray);
+  padding: 1rem 0;
+}
+
+.matrix-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.matrix-input {
+  width: 90%;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  padding-left: 0.5rem;
+  line-height: 1.8;
+}
+
+.matrix-item-list {
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.list-item {
+  width: 90%;
+  margin: 0.5rem auto;
+  border: 3px solid var(--light-gray);
+  border-radius: 5px;
+  padding: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.done-text-container {
+  flex: 1;
+  font-size: 1.6rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.todo-done {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.todo-done:checked + .todo-text {
+  text-decoration: line-through;
+}
+
+.todo-text {
+  flex: 1;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.update-delete-container {
+  font-size: 1.6rem;
+}
+
+.todo-update {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.todo-delete {
+  cursor: pointer;
+}
+
+#decide {
+  order: 1;
+}
+
+#do {
+  order: 2;
+}
+
+#delegate {
+  order: 3;
+}
+
+#delete {
+  order: 4;
+}
+
+.importance {
+  position: absolute;
+  font-size: 1.5rem;
+  top: 50%;
+  left: -3%;
+  writing-mode: vertical-lr;
+}
+
+.urgency {
+  position: absolute;
+  font-size: 1.5rem;
+  bottom: -4%;
+}
+
+@media only all and (max-width: 768px) {
+  .matrix-container {
+    display: block;
+  }
+
+  .matrix-item {
+    width: 90%;
+    margin: 0 auto 1rem;
+  }
+
+  .importance {
+    left: -7%;
+  }
+
+  .urgency {
+    bottom: -2%;
+    left: 45%;
+  }
+}
