@@ -7,7 +7,7 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-// 개발 편의를 위해 cors 무력화 설정
+// 개발 편의를 위해 cors 미들웨어 설정
 app.use(
   cors({
     origin: ["http://127.0.0.1:5500"],
@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(compression());
 
 // 정적파일 제공
-app.use(express.static("practice-fe"));
+app.use(express.static("front"));
 
 // 라우터 분리
 indexRouter(app);
